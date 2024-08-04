@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Function to display help
+show_help() {
+    echo "Usage: $0 [-u uuid] [-i ip] [-s string] [-n number] [-v]"
+    echo
+    echo "Options:"
+    echo "  -u uuid     Specify a UUID."
+    echo "  -i ip       Specify an IP address."
+    echo "  -s string   Specify a string."
+    echo "  -n number   Specify a number."
+    echo "  -v          Enable verbose mode."
+    echo "  -h          Show help message."
+}
+
+# Initialize variables
+uuid=""
+ip=""
+str=""
+number=""
+verbose=false
+
+# Parse arguments
+while getopts "u:i:s:n:vh" opt; do
+    case ${opt} in
+        u)
+            uuid=${OPTARG}
+            ;;
+        i)
+            ip=${OPTARG}
+            ;;
+        s)
+            str=${OPTARG}
+            ;;
+        n)
+            number=${OPTARG}
+            ;;
+        v)
+            verbose=true
+            ;;
+        h)
+            show_help
+            exit 0
+            ;;
+        *)
+            show_help
+            exit 1
+            ;;
+    esac
+done
+
+# Output the parsed values
+echo "UUID: $uuid"
+echo "IP Address: $ip"
+echo "String: $str"
+echo "Number: $number"
+echo "Verbose mode: $verbose"
+
+# Example usage in script
+if [ "$verbose" = true ]; then
+    echo "Verbose mode is enabled."
+fi

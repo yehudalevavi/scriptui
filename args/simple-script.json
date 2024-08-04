@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "desc": "demo script for debugging command line arguments",
+  "args": [
+    {
+      "flag": "-u",
+      "mandatory": true,
+      "hasValue": true,
+      "title": "uuid",
+      "defaultValue": "",
+      "placeholder": "123e4567-e89b-12d3-a456-426614174000"
+    },
+    {
+      "flag": "-i",
+      "mandatory": true,
+      "hasValue": true,
+      "title": "ip_address",
+      "defaultValue": "127.0.0.1",
+      "placeholder": "192.168.1.1"
+    },
+    {
+      "flag": "-s",
+      "mandatory": false,
+      "hasValue": true,
+      "title": "string",
+      "defaultValue": "",
+      "placeholder": "example_string"
+    },
+    {
+      "flag": "-n",
+      "mandatory": false,
+      "hasValue": true,
+      "title": "number",
+      "defaultValue": "0",
+      "placeholder": "42"
+    },
+    {
+      "flag": "-v",
+      "mandatory": false,
+      "hasValue": false,
+      "title": "verbose",
+      "defaultValue": "",
+      "placeholder": ""
+    }
+  ]
+}
